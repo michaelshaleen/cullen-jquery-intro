@@ -20,10 +20,14 @@ function onReady() {
   $('#button').on('click', whenIAddAHarmonica); // not calling function, referring
   //calling would be whenIAddAHarmonica();
   $('.deleteBut').on('click', deleteMe);
+
+  //event delegation
+  //descendent selectors
   $(document).on('click', '.deleteBut', deleteMe);
 }
 function deleteMe() {
-  console.log('delete');
+  console.log('delete', $('.harmonica-item'));
+  $('.harmonica-item').remove();
 }
 
 function whenIAddAHarmonica() {
@@ -33,7 +37,7 @@ function whenIAddAHarmonica() {
   let brand = $('#brand').val(); // put the input value as the var, grab via JQ on id
   console.log('brand is ', brand); // console log the val
   $('#harmonicas').append(` 
-  <li> 
+  <li class="harmonica-item"> 
     Brand is: ${brand}
     <button class= "deleteBut">Delete Me</button>
   </li>`); // grab id of harmonicas, append so onto DOM, this we want to create a list item then append onto that
