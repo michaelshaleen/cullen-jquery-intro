@@ -10,6 +10,7 @@ function onReady() {
   const h2 = $('h2');
   //h2.css('background-color', 'blue');
   $('h2').addClass('froggy');
+
   const h1Text = $('h1').text();
   console.log('h1Text is', h1Text);
 
